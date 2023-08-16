@@ -57,6 +57,7 @@ sparse graph - O(n^2)
 complete graph- if there present all edges - O(n^3)
 bellman ford can not find shortest path in negative weighted cycle graph
 rather it helps to detect negative weighted cycle
+**it is called bottom-up approach
 
 7
 10
