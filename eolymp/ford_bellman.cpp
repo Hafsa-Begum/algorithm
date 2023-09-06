@@ -43,7 +43,9 @@ int main()
         g.push_back(ed);
     }
     ford_bellman(1);
+    int mn = INT_MAX;
     for(int i = 1; i<=n; i++){
+        if(ci)
         cout<<dist[i]<<" ";
     }
     return 0;
