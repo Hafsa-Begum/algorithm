@@ -4,6 +4,22 @@ using namespace std;
 int main()
 {
     string a, b; cin>>a>>b;
+    // NORMAL, O(N+M)
+    // bool ans = false;
+    // int x = 0;
+    // for(char c:b){
+    //     if(c==a[x]){
+    //         x++;
+    //     }
+    //     if(x==a.size()){
+    //         ans = true;
+    //         break;
+    //     }
+    // }
+    // cout<<(ans==true? "YES" :  "NO")<<endl;
+
+
+    // LCS , O(N*M)
     int n = a.size();
     int m = b.size();
     int dp[n+1][m+1];
@@ -18,24 +34,7 @@ int main()
             else dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
         }
     }
-    int i = n, j = m;
-    string ans;
-    while(i!=0 && j!= 0){
-        if(a[i-1] == b[j-1]){
-            ans+=a[i-1];
-            i--;
-            j--;
-        }
-        else{
-            if(dp[i][j-1] > dp[i-1][j]){
-                j--;
-            }
-            else{
-                i--;
-            }
-        }
-    }
-    reverse(ans.begin(), ans.end());
-    cout<<ans<<endl;
+    
+    cout<<(dp[n][m]==n? "YES" :  "NO")<<endl;
     return 0;
 }

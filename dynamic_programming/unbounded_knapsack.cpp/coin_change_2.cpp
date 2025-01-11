@@ -33,7 +33,7 @@ int main()
 }
 
 /*
-coin change is same as the ways to count subset sum given as target number
+coin change 2 is same as the ways to count no of multiple ways to take min coin
 input
 3
 1 2 3

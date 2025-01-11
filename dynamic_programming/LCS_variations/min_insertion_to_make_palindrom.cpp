@@ -3,8 +3,10 @@ using namespace std;
 
 int main()
 {
-    string a, b; cin>>a>>b;
+    string a, b; cin>>a;
     int n = a.size();
+    b = a; 
+    reverse(b.begin(), b.end());
     int m = b.size();
     int dp[n+1][m+1];
     for(int i = 0; i<=n; i++){
@@ -18,24 +20,7 @@ int main()
             else dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
         }
     }
-    int i = n, j = m;
-    string ans;
-    while(i!=0 && j!= 0){
-        if(a[i-1] == b[j-1]){
-            ans+=a[i-1];
-            i--;
-            j--;
-        }
-        else{
-            if(dp[i][j-1] > dp[i-1][j]){
-                j--;
-            }
-            else{
-                i--;
-            }
-        }
-    }
-    reverse(ans.begin(), ans.end());
-    cout<<ans<<endl;
+    
+    cout<<"insert = "<<n-dp[n][m]<<endl;
     return 0;
 }

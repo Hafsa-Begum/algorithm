@@ -3,8 +3,10 @@ using namespace std;
 
 int main()
 {
-    string a, b; cin>>a>>b;
+    string a, b; cin>>a;
     int n = a.size();
+    b = a; 
+    reverse(b.begin(), b.end());
     int m = b.size();
     int dp[n+1][m+1];
     for(int i = 0; i<=n; i++){
@@ -35,7 +37,7 @@ int main()
             }
         }
     }
-    reverse(ans.begin(), ans.end());
+    
     cout<<ans<<endl;
     return 0;
 }
